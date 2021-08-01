@@ -15,7 +15,7 @@ import java.util.List;
 public class ExportExcel {
     public static String TYPE = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet";
     static String[] HEADERs = { "Id", "Name","Brand","Price" };
-    static String SHEET = "Tutorials";
+    static String SHEET = "Products";
 
     public static ByteArrayInputStream productToExcel(List<Product> products) {
 
