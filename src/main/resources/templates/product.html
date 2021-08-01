@@ -7,9 +7,11 @@
 </head>
 <body>
 <div class="container-fluid text-center">
-  <div><h2>List Product</h2></div>
+  <div><h2>List Product</h2>
+  </div>
   <div class="m-2">
-    <a class="h3" th:href="@{/product/new}">Add New Product</a>
+    <a  style="float: left;" th:href="@{/product/new}">Add New Product</a>
+    <a th:href="@{/product/createExcel}" style="float: right;">Export to Excel</a>
   </div>
   <div th:if="${message}" class="alert-success text-center">
     [[${message}]]

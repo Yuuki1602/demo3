@@ -1,9 +1,12 @@
 package test.service;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import test.product.Product;
 import test.repository.ProductRepository;
+
+import java.io.ByteArrayInputStream;
 import java.util.List;
 import java.util.Optional;
 
@@ -35,4 +38,10 @@ public class ProductService {
         }
         repo.deleteById(id);
     }
+    public ByteArrayInputStream load(){
+        List<Product> products = repo.findAll();
+        ByteArrayInputStream in = ExportExcel.productToExcel(products);
+        return  in;
+    }
+
 }
